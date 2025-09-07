@@ -1,0 +1,12 @@
+/* Hide the visual "(current)" text Bootstrap may add via ::after.
+   Keep aria-current for screen readers but remove the visual string. */
+.pagination .page-link[aria-current="page"]::after {
+  content: "" !important;
+}
+
+/* Some Bootstrap versions add visually-hidden text inside links.
+   If you still see duplicates from hidden spans, hide them visually.
+   (This reduces visual duplication but keeps accessible attributes.) */
+.pagination .visually-hidden {
+  display: none !important;
+}

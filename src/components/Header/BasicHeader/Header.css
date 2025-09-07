@@ -1,0 +1,13 @@
+/* Header.module.css */
+.main-header {
+  position: relative;
+  width: 100%;
+  background: var(--dark-2, #0A0E19);
+  padding: 20px 80px 20px 80px;
+  border-bottom: 1px solid var(--dark-4, #151B2D);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px;
+  z-index: 2;
+}

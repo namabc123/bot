@@ -1,0 +1,36 @@
+[Unit]
+Description=Moonbot GitHub Webhook Server
+Documentation=https://github.com/your-username/moonbot
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root/frontend
+Environment=NODE_ENV=production
+Environment=WEBHOOK_PORT=3001
+Environment=GITHUB_WEBHOOK_SECRET=your-webhook-secret-here
+Environment=PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/root/.nvm/versions/node/current/bin
+ExecStart=/bin/bash -c 'which node > /dev/null && node /root/frontend/webhook_server.js || /usr/bin/node /root/frontend/webhook_server.js'
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=moonbot-webhook
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/www/moonbot /var/log
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=4096
+
+[Install]
+WantedBy=multi-user.target

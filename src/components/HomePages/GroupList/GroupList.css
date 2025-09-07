@@ -1,0 +1,21 @@
+.grouplist-menu.dropdown-menu {
+  display: none;
+}
+
+.grouplist-menu.dropdown-menu.show {
+  display: flex;
+  flex-direction: column;
+  background-color: #192033;
+  color: #e4eefe;
+  border-radius: 8px;
+  width: 120px;
+}
+
+.grouplist-menu.dropdown-menu .dropdown-item {
+  color: #e4eefe;
+  padding: 8px 12px;
+}
+
+.grouplist-menu.dropdown-menu .grouplist-menu.dropdown-menu:hover {
+  background-color: #2a334d;
+}

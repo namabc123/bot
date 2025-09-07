@@ -1,0 +1,21 @@
+.semicircle-gauge circle {
+    transform: translateY(-5px) !important; /* adjust until inline */
+    fill: var(--dark-1, #050811) !important;
+    stroke: #E4EEFE !important;
+    stroke-width: 1 !important;
+}
+
+.semicircle-gauge text {
+    font-weight: 700;
+    font-size: 20px !important;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    transform: translateY(-25px);
+}
+
+.tick-value,
+.tick-line {
+    display: none;
+}

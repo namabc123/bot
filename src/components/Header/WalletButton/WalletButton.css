@@ -1,0 +1,35 @@
+.wallet-button {
+    display: flex;                      
+    align-items: center;               
+    justify-content: center; 
+    min-width: 162px;
+    max-width: 162px;
+    height: 40px;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    gap: 6px;
+    opacity: 1;
+    border-radius: 100px;
+    background: var(--primary, #1967FF);
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    color: #E4EEFE
+}
+
+.wallet-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+
+.wallet-button img {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}

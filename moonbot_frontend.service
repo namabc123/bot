@@ -1,0 +1,27 @@
+[Unit]
+Description=Moonbot Frontend
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root/frontend
+ExecStart=/root/frontend/start_wrapper.sh
+Restart=always
+RestartSec=10
+Environment=NODE_ENV=production
+Environment=VITE_API_URL=http://localhost:8000
+RuntimeMaxSec=43200
+StandardOutput=journal
+StandardError=journal
+
+# Ensure proper environment for Node.js and Yarn
+Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/root/.nvm/versions/node/current/bin:/root/.nvm/versions/node/current/bin:/usr/local/node/bin:/opt/node/bin
+Environment=HOME=/root
+Environment=NVM_DIR=/root/.nvm
+Environment=NODE_PATH=/usr/local/lib/node_modules
+
+[Install]
+WantedBy=multi-user.target
