@@ -37,8 +37,8 @@ const AppContent = () => {
 
   return (
       <Routes>
-        <Route path="/" element={<GroupList chats={chats} />} />
-        <Route path="/home" element={<HomePages />} />
+        {/* <Route path="/" element={<GroupList chats={chats} />} /> */}
+        <Route path="/" element={<HomePages />} />
         <Route path="/group/:groupName" element={<GroupOverview />} />
         <Route path="/group/:groupName/page" element={<GroupPage />} />
       </Routes>
